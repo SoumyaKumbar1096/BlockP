@@ -1,0 +1,38 @@
+{
+    "manifest_version": 3,
+    "name": "blockp",
+    "description": "Blocks adult content and helps  you focus",
+    "version": "0.0.1",
+    "permissions": [
+        "webRequest",
+        "declarativeNetRequest",
+        "webNavigation",
+        "tabs",
+        "activeTab",
+        "storage",
+        "notifications",
+        "scripting",
+        "declarativeContent"
+    ],
+    "host_permissions": [
+        "https://*/*",
+        "http://*/*"
+    ],
+    "background": {
+        "service_worker": "/background.js"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "/content.js"
+            ]
+        }
+    ],
+    "options_page": "options.html"
+}
