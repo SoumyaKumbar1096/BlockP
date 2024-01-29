@@ -3,6 +3,21 @@
     "name": "blockp",
     "description": "Blocks adult content and helps  you focus",
     "version": "0.0.1",
+    "permissions": [
+        "webRequest",
+        "declarativeNetRequest",
+        "webNavigation",
+        "tabs",
+        "activeTab",
+        "storage",
+        "notifications",
+        "scripting",
+        "declarativeContent"
+    ],
+    "host_permissions": [
+        "https://*/*",
+        "http://*/*"
+    ],
     "background": {
         "service_worker": "/background.js"
     },
